@@ -8,7 +8,26 @@ Ejercicio 8. Hacer un programa en PHP que tenga un array con 8 numeros enteros n
 - Buscar algun elemento (buscar por el parametro que me llegue por la url)
 - Mostrar el indice del elemento que buscamos
  */
-
+$numerosEnteros = [1, 5, 8, 32, 7, 19, 2, 14];
+echo "Los números son:". "<br>";
+for ($i=0; $i<count($numerosEnteros); $i++) { 
+  echo  $numerosEnteros[$i]."<br>";
+}
+function pDump($numerosEnteros)
+{
+      echo "<pre>";
+      var_dump($numerosEnteros);
+      echo "</pre>";
+}
+pDump($numerosEnteros);
+echo "Los números ordenados de menor a mayor son:". "<br>";
+sort($numerosEnteros);
+for ($i=0; $i<count($numerosEnteros); $i++) { 
+  echo  $numerosEnteros[$i]."<br>";
+}
+echo "La longitud del array es: ". "<br>";
+$cantElementos = count($numerosEnteros);
+print($cantElementos. " ". "elementos". "<br>");
 /*
 Ejercicio 9. Escribir un programa con PHP que añada valores a un array ya existente ,mientras que su longuitud sea menor a 15 y luego mostrarlo por pantalla.
  */
