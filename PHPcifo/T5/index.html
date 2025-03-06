@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperatura</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div
+        tabindex="1"
+        aria-label="Contenedor de botones para accesibilidad"
+        id="acc"
+      >
+        <img id="moretext" src="icons8-add-text-32.png" alt="button" />
+        <img id="lesstext" src="icons8-decrease-font-24.png" alt="button" />
+        <img id="contrast" src="icons8-contrast-50.png" alt="button" />
+      </div>
+
+      <div
+        class="container-fluid"
+        id="conteiner"
+        aria-label="Contenedor de inputs y botones"
+      >
+        <div tabindex="2" id="divtitle">
+          <h1 id="tit">Temperatura actual</h1>
+        </div>
+
+        <label id="leb" for="name">Seleccione un país</label>
+        <select tabindex="3" class="form-select" name="" id="seleccpais">
+          <option value="">--Seleccione--</option>
+          <option value="ESP">España</option>
+          <option value="CUB">Cuba</option>
+          <option value="FRA">Francia</option>
+        </select>
+        <label id="lebdos" for="name">Escriba una ciudad</label>
+        <input
+          tabindex="4"
+          class="form-control"
+          id="elige_ciudad"
+          type="text"
+        />
+        <button
+          tabindex="5"
+          class="btn btn-primary"
+          id="btn_temp"
+          role="button"
+        >
+          Mostrar temperatura
+        </button>
+        <div
+          id="errcontainer"
+          role="alert"
+          class="alert alert-danger"
+          aria-label="Muestra el error al cargar la temperatura"
+        ></div>
+        <div
+          tabindex="5"
+          class="container-md"
+          id="mostra"
+          aria-label="Muestra el la temperatura cargada"
+        >
+          <p id="tmpmax"></p>
+          <p id="tmpmin"></p>
+          <p id="actual"></p>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+    <script src="acc.js"></script>
+  </body>
+</html>

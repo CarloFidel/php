@@ -1,0 +1,42 @@
+{
+  // Configuraciones generales
+  "files.eol": "\n",
+  "editor.dragAndDrop": false,
+  "editor.rulers": [120],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?"
+  },
+  "files.autoSave": "afterDelay",
+  "workbench.localHistory.mergeWindow": 600,
+  "workbench.tree.indent": 20,
+  "explorer.compactFolders": false,
+  "breadcrumbs.symbolPath": "off",
+  "workbench.editor.tabSizing": "shrink",
+  "editor.guides.bracketPairs": true,
+  // PHP Namespace Resolver
+  "namespaceResolver.sortAlphabetically": true,
+  "namespaceResolver.sortOnSave": true,
+  "namespaceResolver.showMessageOnStatusBar": true,
+  // PHP DocBlocker
+  "php-docblocker.alignParams": true,
+  "php-docblocker.alignReturn": true,
+  "php-docblocker.gap": false,
+  "php-docblocker.useShortNames": true,
+  "php.validate.executablePath": "c://xampp//php//php.exe",
+  // PHP Add Property
+  "phpAddProperty.property.visibility.choose": true,
+  "phpAddProperty.property.visibility.default": "private",
+  "phpAddProperty.contextMenuOptions.enable": true,
+  "phpAddProperty.contextMenuOptions.renameProperty": false,
+  "phpAddProperty.contextMenuOptions.changePropertyType": false,
+  "phpAddProperty.showMessagesOnStatusBar": true,
+  "phpAddProperty.constructor.docblock.enable": true,
+  "phpAddProperty.constructor.docblock.withParameter": true,
+  "fiveServer.php.executable": "c:/xampp/php/php.exe",
+  "fiveServer.php.ini": "c:/xampp/php/php.ini",
+  "fiveServer.port": 5000,
+  "php.suggest.basic": false // Indicar tipo en parámetro del constructor a la vez que en el parámetro del Docblock
+}
