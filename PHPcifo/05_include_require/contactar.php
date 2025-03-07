@@ -1,11 +1,10 @@
 <?php 
 require_once "assets/libreria.php";
-require "views-vistas/header.inc";
+require "views-vistas/header.tpl";
 ?>
 <main>
-  <h1>Página índex</h1>
-  <h2><?=$encabezado_2;?></h2>
-  <p>texto de prueba de la pagina de inicio</p>
+<h1>contacto</h1>
+<h2><?=$content_contact?></h2>
  </main>
  <?php
  require "views-vistas/footer.tpl";

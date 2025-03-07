@@ -1,9 +1,9 @@
 <?php 
 require_once "assets/libreria.php";
-require "views-vistas/header.inc";
+require "views-vistas/header.tpl";
 ?>
 <main>
-  <h1>Página índex</h1>
+  <h1>Página INDEX</h1>
   <h2><?=$encabezado_2;?></h2>
   <p>texto de prueba de la pagina de inicio</p>
  </main>
