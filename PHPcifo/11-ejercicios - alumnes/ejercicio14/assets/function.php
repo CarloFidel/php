@@ -11,17 +11,17 @@ $arrayNotas=[$examen1,$examen2,$examen3,$examen4,$examen5];
 for ($i = 0; $i < count($arrayNotas); $i++) {
   $nota = $arrayNotas[$i];
   if ($nota == 10) {
-    $result = "Matrícula de honor";
+    $result = "es Matrícula de honor";
   } elseif ($nota >= 9) {
-    $result = "Excelente";
+    $result = "está Excelente";
   } elseif ($nota >= 7) {
-    $result = "Notable";
+    $result = "está Notable";
   } elseif ($nota >= 5) {
-    $result = "Aprobado";
+    $result = "está Aprobado";
   } elseif ($nota < 5) {
-    $result = "Suspenso";
+    $result = "está Suspenso";
   } 
-  echo "La nota obtenida en el examen " . ($i + 1) . " es " . $nota . " por lo tanto, el alumno está: " . $result . "<br>";
+  echo "La nota obtenida en el examen " . ($i + 1) . " es " . $nota . " por lo tanto, el alumno". " " . $result . "<br>";
 }
 $mediaNotas = ($examen1 + $examen2 + $examen3 + $examen4 + $examen5) / 5;
 echo "La media de las notas es: " . round($mediaNotas,0) . "<br>";
