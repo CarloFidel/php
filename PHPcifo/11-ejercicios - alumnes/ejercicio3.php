@@ -10,10 +10,9 @@ function cuadrado(){
   for($i = 0; $i <= 40; $i++){
     $num[] = $i;
 }    foreach ($num as $numero) {
-     echo "El cuadrado de". " ". $numero. " es ".  $numero*$numero . "<br>";}
-
-
-}cuadrado();
+     echo $numero. " al cuadrado = ".  $numero*$numero . "<br>";}
+}
+cuadrado();
 
 
 

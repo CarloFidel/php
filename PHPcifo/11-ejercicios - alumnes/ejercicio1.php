@@ -9,3 +9,4 @@ $continente = 'Europa';
 
 echo ($continente . " - " . $pais);
 echo "<p> Tienen datos tipo String </p>";
+//tienen datos tipo string

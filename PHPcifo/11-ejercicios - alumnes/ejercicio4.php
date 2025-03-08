@@ -1,20 +1,28 @@
-<?php
-
-/* 
-Ejercicio 4. Recoger dos numeros por la url(Parametros GET) y hacer todas las 
+ 
+<!-- Ejercicio 4. Recoger dos numeros por la url(Parametros GET) y hacer todas las 
  * operaciones basicas de una calculadora(suma, resta, multiplicaion y division)
  * de esos dos numeros.
- */
+ -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="ejercicio4.php" method="get">
+    <label for="">Ingrese número 1</label>
+    <input type="number" name="num1" id="">
+    <label for="">Ingrese número 2</label>
+    <input type="number" name="num2" id="">
+    <button type="submit">Submit</button>
 
-function pDump($variable)
-{
-    echo "<pre>";
-    var_dump($variable);
-    echo "</pre>";
-}
-
-echo "<h1>"."El primer numero es". " ". $_GET['num1']. " " ."y el segundo es". " ".$_GET['num2']."</h1>";
-pDump($_GET);
+  </form>
+</body>
+</html>
+<?php
+echo "<h1>El primer numero es". " ". $_GET['num1']. " " ."y el segundo es". " ".$_GET['num2']."</h1>";
 $num1 = $_GET['num1'];
 $num2 = $_GET['num2'];
 
@@ -30,3 +38,4 @@ echo "<br>";
 echo "la multiplicación de". " ". $num1. " * " .$num2. " = ". $multi;
 echo "<br>";
 echo "la división de". " ". $num1. " / " .$num2. " = ". round($division,1);
+?>
