@@ -22,6 +22,8 @@
 </body>
 </html>
 <?php
+if(isset($_GET['num1']) && isset($_GET['num2']) && !empty($_GET['num1']) && !empty($_GET['num2'])){
+
 echo "<h1>El primer numero es". " ". $_GET['num1']. " " ."y el segundo es". " ".$_GET['num2']."</h1>";
 $num1 = $_GET['num1'];
 $num2 = $_GET['num2'];
@@ -38,4 +40,7 @@ echo "<br>";
 echo "la multiplicación de". " ". $num1. " * " .$num2. " = ". $multi;
 echo "<br>";
 echo "la división de". " ". $num1. " / " .$num2. " = ". round($division,1);
+}else{
+  echo "<h1 style='color:red'>Introduce los números</h1>";
+}
 ?>

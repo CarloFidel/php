@@ -19,6 +19,7 @@ for ($i=0; $i<count($numerosEnteros); $i++) {
 }
 $cantElementos = count($numerosEnteros);
 echo "La longitud del array es de $cantElementos elementos". "<br>";
+echo "<br>";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,12 +30,17 @@ echo "La longitud del array es de $cantElementos elementos". "<br>";
 </head>
 <body>
   <form action="ejercicio8.php" method="POST">
-    <label for="">Ingrese el indice</label>
+    <label for="">Ingrese el indice <br> para obtener elemento</label>
     <input type="number" name="num1" id="">
     <button type="submit">Submit</button>
   </form>
 </body>
 </html>
 <?php
+if(isset($_POST['num1']) && !empty($_POST['num1'])){
 $indiceElemento = $_POST['num1'];
 echo "El elemento es: $numerosEnteros[$indiceElemento] y está en el índice". " ". array_search($numerosEnteros[$indiceElemento], $numerosEnteros);
+}else{
+  echo "<h1 style='color:red'>Introduce el índice</h1>";
+}
+?>

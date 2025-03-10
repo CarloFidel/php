@@ -20,6 +20,7 @@
 </html>
 
 <?php
+if(isset($_GET['num1']) && isset($_GET['num2']) && !empty($_GET['num1']) && !empty($_GET['num2'])){
 echo "<h1>"."El primer numero es". " ". $_GET['num1']. " " ."y el segundo es". " ".$_GET['num2']."</h1>";
 $num1 = $_GET['num1'];
 $num2 = $_GET['num2'];
@@ -27,5 +28,8 @@ echo "<h2>Los números entre $num1 y $num2 son:</h2>";
 
 for($i = $num1; $i<=$num2; $i++ ){
   echo $i. " , ";
+}
+}else{
+  echo "<h1 style='color:red'>Introduce los números</h1>";
 }
 ?>
