@@ -1,4 +1,4 @@
--- Active: 1742312937282@@127.0.0.1@3306@plantas
+-- Active: 1742466970627@@127.0.0.1@3306@plantas
 DROP DATABASE IF EXISTS Plantas;
 
 CREATE DATABASE Plantas DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
@@ -21,12 +21,6 @@ CREATE TABLE estacio (
   estacio VARCHAR (10) PRIMARY KEY
 )ENGINE=InnoDB;
 
-CREATE TABLE mètodes_de_reproducció(
-  id_reproduccion SMALLINT(4),
-  métode ENUM ('Llavors', 'Esqueix', 'Estaques', 'Bulbs', 'Capificats', 'Estolons'),
-  PRIMARY KEY (id_reproduccion)
-)ENGINE=innoDB;
-
 CREATE TABLE planta (
   nom_cientific  VARCHAR (30) NOT NULL, 
   nom_popular  VARCHAR(20) UNIQUE,
@@ -34,7 +28,6 @@ CREATE TABLE planta (
   FOREIGN KEY (floracio) REFERENCES estacio(estacio),
   PRIMARY KEY (nom_cientific)
 )ENGINE=innoDB;
-
 
 CREATE TABLE metodes_reproduccio(
   nom_metode VARCHAR(10),
@@ -82,12 +75,71 @@ CREATE TABLE reproduccio(
   FOREIGN KEY (met_reproducc) REFERENCES metodes_reproduccio(nom_metode)
   )ENGINE=InnoDB;
 
-INSERT INTO planta VALUES ('Geranium', 'Gerani', 'Primavera' );
-INSERT INTO metode_reproduccio VALUES ('Bulbs');
-INSERT INTO metode_reproduccio VALUES ('Bulbs');
-INSERT INTO metode_reproduccio VALUES ('Bulbs');
-INSERT INTO metode_reproduccio VALUES ('Bulbs');
-INSERT INTO metode_reproduccio VALUES ('Bulbs');
-INSERT INTO metode_reproduccio VALUES ('Bulbs');
-INSERT INTO metode_reproduccio VALUES ('Bulbs');
-INSERT INTO metode_reproduccio VALUES ('Bulbs');
+
+INSERT INTO firma_comercial VALUES ('UOCADOB');
+INSERT INTO firma_comercial VALUES ('TIRSADOB');
+INSERT INTO firma_comercial VALUES ('PRISADOB');
+INSERT INTO firma_comercial VALUES ('CIRSADOB');
+
+INSERT INTO adob VALUES ('Plantavit', 'UOCADOB', 'LLD');
+INSERT INTO adob VALUES ('Vitaplant', 'TIRSADOB', 'AI');
+INSERT INTO adob VALUES ('Nutreplant', 'CIRSADOB', 'LLD');
+INSERT INTO adob VALUES ('Creixplant', 'PRISADOB', 'AI');
+INSERT INTO adob VALUES ('Casadob', 'TIRSADOB', 'AI');
+INSERT INTO adob VALUES ('Superplant', 'PRISADOB', 'LLD');
+INSERT INTO adob VALUES ('Plantadob', 'CIRSADOB', 'AI');
+INSERT INTO adob VALUES ('Sanexplant', 'UOCADOB', 'LLD');
+
+INSERT INTO estacio VALUES ('ivern');
+INSERT INTO estacio VALUES ('estiu');
+INSERT INTO estacio VALUES ('tardor');
+INSERT INTO estacio VALUES ('primavera');
+
+INSERT INTO planta VALUES ('Geranium', 'Gerani', 'Primavera');
+INSERT INTO planta VALUES ('Begonia ', 'Begònia', 'Estiu');
+INSERT INTO planta VALUES ('Camellia ', 'Camèlia', 'Primavera');
+INSERT INTO planta VALUES ('Cyclamen ', 'Ciclamen', 'ivern');
+INSERT INTO planta VALUES ('Rosa ', 'Roser', 'Primavera');
+INSERT INTO planta VALUES ('Polystichum ', 'Falguera', NULL);
+INSERT INTO planta VALUES ('Tulipa ', 'Tulipa', 'Primavera');
+INSERT INTO planta VALUES ('Chrysanthemum ', 'Crisantem', 'Estiu');
+INSERT INTO planta VALUES ('Philodendron ', 'Potus', NULL);
+INSERT INTO planta VALUES ('Chlorophytum ', 'Cintes', NULL);
+INSERT INTO planta VALUES ('Euphorbia ', 'Poinsetia', 'ivern');
+INSERT INTO planta VALUES ('Hedera ', 'Heura', NULL);
+INSERT INTO planta VALUES ('Ficus ', 'Ficus Benjamina', NULL);
+INSERT INTO planta VALUES ('Codiaeum ', 'Croton', NULL);
+
+
+INSERT INTO metodes_reproduccio VALUES ('Llavors');
+INSERT INTO metodes_reproduccio VALUES ('Esqueix');
+INSERT INTO metodes_reproduccio VALUES ('Estaques');
+INSERT INTO metodes_reproduccio VALUES ('Bulbs');
+INSERT INTO metodes_reproduccio VALUES ('Capficats ');
+INSERT INTO metodes_reproduccio VALUES ('Estolons ');
+INSERT INTO planta_interior VALUES ('Philodendron ', 'LLum directa', 15);
+INSERT INTO planta_interior VALUES ('Euphorbia ', 'LLum indirecta', 18);
+INSERT INTO planta_interior VALUES ('Ficus ', 'LLum indirecta', 19);
+INSERT INTO planta_interior VALUES ('Codiaeum ', 'No corrents', 17);
+
+INSERT INTO planta_exterior VALUES ('Geranium ', 'P');
+INSERT INTO planta_exterior VALUES ('Begonia rex ', 'P');
+INSERT INTO planta_exterior VALUES ('Camellia ', 'P');
+INSERT INTO planta_exterior VALUES ('Cyclamen ', 'P');
+INSERT INTO planta_exterior VALUES ('Rosa ', 'P');
+INSERT INTO planta_exterior VALUES ('Tulipa ', 'T');
+INSERT INTO planta_exterior VALUES ('Chrysanthemum ', 'T');
+INSERT INTO planta_exterior VALUES ('Chlorophytum ', 'P');
+INSERT INTO planta_exterior VALUES ('Hedera ', 'P');
+
+INSERT INTO exemplars_plantes VALUES ('Geranium ', 6);
+INSERT INTO exemplars_plantes VALUES ('Begonia ', 4);
+INSERT INTO exemplars_plantes VALUES ('Rosa  ', 3);
+INSERT INTO exemplars_plantes VALUES ('Hedera  ', 4);
+INSERT INTO exemplars_plantes VALUES ('Ficus  ', 2);
+INSERT INTO exemplars_plantes VALUES ('Euphorbia  ', 3);
+INSERT INTO exemplars_plantes VALUES ('Codiaeum  ', 2);
+INSERT INTO exemplars_plantes VALUES ('Cyclamen   ', 2);
+
+
+INSERT INTO dosi_adob VALUES ('Cyclamen   ', 2);

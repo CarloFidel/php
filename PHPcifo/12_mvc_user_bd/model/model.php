@@ -10,7 +10,7 @@ function modeloRegistrarNuevoUsuario($usuario, $email, $con)
       }
  */
       $myrows = [];
-      $selectQuery = "SELECT * FROM usuarios WHERE usuario= '$nombre' OR email = '$email'";
+      $selectQuery = "SELECT * FROM usuarios WHERE usuario= '$usuario' OR email = '$email'";
 
       $result = $con->query($selectQuery);
       if($result->num_rows > 0) {
