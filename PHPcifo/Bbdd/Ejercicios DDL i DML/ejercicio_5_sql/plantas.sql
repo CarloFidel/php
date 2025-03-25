@@ -1,4 +1,4 @@
--- Active: 1742466970627@@127.0.0.1@3306@plantas
+-- Active: 1742312937282@@127.0.0.1@3306@plantas
 DROP DATABASE IF EXISTS Plantas;
 
 CREATE DATABASE Plantas DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
@@ -6,9 +6,8 @@ CREATE DATABASE Plantas DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
 USE Plantas;
 
 CREATE TABLE firma_comercial (
-  Nom_firma VARCHAR (20) PRIMARY KEY
+  nom_firma VARCHAR (20) PRIMARY KEY
 )ENGINE=InnoDB;
-
 CREATE TABLE adob(
   nom_adob VARCHAR(20) UNIQUE,
   firma_comercial VARCHAR(20) NOT NULL ,
@@ -142,4 +141,86 @@ INSERT INTO exemplars_plantes VALUES ('Codiaeum  ', 2);
 INSERT INTO exemplars_plantes VALUES ('Cyclamen   ', 2);
 
 
-INSERT INTO dosi_adob VALUES ('Cyclamen   ', 2);
+INSERT INTO dosi_adob VALUES ('Geranium','Primavera','Casadob', 30);
+INSERT INTO dosi_adob VALUES ('Geranium','ivern','Vitaplant', 20);
+INSERT INTO dosi_adob VALUES ('Begonia ','Estiu','Casadob', 25);
+INSERT INTO dosi_adob VALUES ('Camellia','ivern','Plantavit', 50);
+INSERT INTO dosi_adob VALUES ('Camellia','Primavera','Casadob', 75);
+INSERT INTO dosi_adob VALUES ('Cyclamen','Tardor','Casadob', 30);
+INSERT INTO dosi_adob VALUES ('Chrysanthemum','Primavera','Casadob', 45);
+INSERT INTO dosi_adob VALUES ('Begonia','Primavera',
+'Nutreplant', 50);
+INSERT INTO dosi_adob VALUES ('Rosa ','Primavera','Creixplant', 50);
+INSERT INTO dosi_adob VALUES ('Rosa ','Primavera','Casadob', 30);
+
+INSERT INTO dosi_adob VALUES ('Polystichum','Primavera','Casadob', 40);
+INSERT INTO dosi_adob VALUES ('Polystichum','Tardor','Plantadob', 20);
+INSERT INTO dosi_adob VALUES ('Tulipa','ivern','Casadob', 40);
+INSERT INTO dosi_adob VALUES ('Philodendron','Primavera','Casadob', 40);
+INSERT INTO dosi_adob VALUES ('Chlorophytum','Tardor','Casadob', 30);
+INSERT INTO dosi_adob VALUES ('Chlorophytum','ivern','Superplant', 40);
+INSERT INTO dosi_adob VALUES ('Euphorbia','ivern','Casadob', 50);
+INSERT INTO dosi_adob VALUES ('Euphorbia','ivern','Sanexplant', 40);
+INSERT INTO dosi_adob VALUES ('Hedera','Primavera','Casadob', 45);
+INSERT INTO dosi_adob VALUES ('Codiaeum','Primavera','Casadob', 60);
+INSERT INTO dosi_adob VALUES ('Codiaeum','Estiu','Casadob', 50);
+INSERT INTO dosi_adob VALUES ('Geranium','Estiu','Sanexplant', 40);
+INSERT INTO dosi_adob VALUES ('Ficus','Primavera','Casadob', 50);
+
+INSERT INTO reproduccio VALUES ('Esqueix', 'Geranium', 'Alt'),('Esqueix','Begonia', 'Alt'),('Capficats','Begonia', 'Alt'),('Llavors','Begonia', 'Baix'),('Estaques','Rosa', 'Mitjà'),('Bulbs','Rosa', 'Alt'),('Estolons','Chlorophytum', 'Alt'),('Esqueix','Cyclamen', 'Alt'),('Capficats','Cyclamen', 'Mitjà'),('Capficats','Philodendron', 'Alt'),('Esqueix','Philodendron', 'Alt')
+
+SELECT *FROM planta
+
+SELECT nom_cientific, floracio FROM planta;
+
+SELECT nom_cientific, AS nom, floracio AS estacio_de_floracio FROM planta;
+
+SELECT nom_cientific AS nom, floracio estacio_de_floracio
+FROM planta
+WHERE floracio='ivern';
+
+/* a) Mostra les firmes comercials que existeixen.
+b) Mostra el nom científic de les plantes que necessiten llum directa.
+c) Mostra el nom científic de les plantes i les quantitats d’adobs de les que el reben major o igual a 50.
+d) Mostra el nom científic de les plantes que el seu mètode de reproducció és Esqueix amb un grau d’èxit alt.
+e) Mostra el nom científic de les plantes que tenen 4 o més exemplars */
+SELECT  nom_firma FROM firma_comercial;
+SELECT nom_cientific, floracio FROM planta;
+
+SELECT nom_planta, quantitat_adob FROM dosi_adob WHERE quantitat_adob>=50;
+
+SELECT nom_planta
+FROM reproduccio
+WHERE met_reproducc='Esqueix' AND grau_exit = 'Alt';
+
+SELECT nom_planta
+FROM exemplars_plantes
+WHERE num_examplar = 4;
+
+SELECT DISTINCT nom_planta FROM dosi_adob WHERE estacio='primavera'
+
+SELECT DISTINCT nom_adob
+FROM dosi_adob
+WHERE quantitat_adob BETWEEN 40 AND 50 AND
+estacio='primavera';
+
+SELECT nom_adob
+FROM adob
+WHERE firma_comercial IN ('TIRSADOB','PRISADOB');
+
+SELECT nom_adob
+FROM adob
+WHERE firma_comercial NOT IN ('TIRSADOB', 'PRISADOB');
+
+/*Mostra el nom popular de les plantes que el seu nom comença amb C*/
+SELECT nom_cientific
+FROM planta
+WHERE nom_popular LIKE 'C%';
+
+/* Mostra el nom popular de les plantes que el seu nom comença amb C i tenen sis caràcters */
+SELECT nom_popular
+FROM planta
+WHERE nom_popular LIKE 'C_____';
+
+/* Exercici 23 */
+SELECT nom_cientific, nom_popular FROM planta
