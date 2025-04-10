@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUDcon JSON y PDD</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>CRUD<span> Create Read Update Delete</span></h1>
+    <table>
+      <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td colspan="2">Acciones</td>
+      </tr>
+      <tbody id="tablaDatos">
+        <!-- aqui se leerán los datos dinámicos -->
+      </tbody>
+      <tr>
+        <td></td>
+        <td><input type="text" id="nombre" size="10" /></td>
+        <td><input type="text" id="apellido" size="10" /></td>
+        <td class="bot"><button id="btnInsertar">Insertar</button></td>
+      </tr>
+    </table>
+    <script src="views/js/script.js"></script>
+  </body>
+</html>

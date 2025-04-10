@@ -20,11 +20,11 @@ do {
 echo "Coste apropiado encontrado: " . $coste . "<br>";
 echo "encriptado: " . $pw . "<br>"; 
  */
-$pw = password_hash("rasmbbuerdorf", PASSWORD_DEFAULT, ["cost" => 10]);
+$pw = password_hash("oscareroles", PASSWORD_DEFAULT, ["cost" => 10]);
 echo "encriptado: " . $pw . "<br>";
 
-if (password_verify('rasmbbuerdorf', $pw)) {
-    var_dump(password_verify('rasmbbuerdorf', $pw));
+if (password_verify('oscareroles', $pw)) {
+    var_dump(password_verify('oscareroles', $pw));
     echo 'La contraseña es válida!';
 } else {
     echo 'La contraseña no es válida.';
