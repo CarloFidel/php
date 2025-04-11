@@ -82,7 +82,7 @@ if (!empty($this->password)) {
 if(isset($this->tipo_usuario)){
     $stmt->bindParam(":tipo_usuario", $this->tipo_usuario);
 }
-if (4stmt->execute()) {
+if ($stmt->execute()) {
     return true;
 }
     return false;

@@ -1,5 +1,5 @@
 <?php
-function pDump($parram)
+function pDump($param)
 {
   echo "<pre><code>";
   var_dump($param);
