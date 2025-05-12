@@ -22,9 +22,8 @@ divcorreoriError.style.display = "none";
 divpassError.style.display = "none";
 divformError.style.display = "none";
 
-
 const exp = {
-  nombre: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\u00c7s]{5,30}$/,
+  nombre: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\u00c7\s]{5,30}$/,
   usuari: /^[a-zA-Z0-9]{5,8}$/,
   correo:
     /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,9}/,
@@ -89,7 +88,7 @@ const validarform = (e) => {
       }
       break;
   }
-}
+};
 inputs.forEach((input) => {
   input.addEventListener("keyup", validarform);
   input.addEventListener("change", validarform);
@@ -98,7 +97,7 @@ inputs.forEach((input) => {
 const validarYEnviarFormulario = () => {
   divformError.style.display = "none";
   if (campos.nombre && campos.usuari && campos.correo && campos.password) {
-    return true; 
+    return true;
   } else {
     inputs.forEach((input) => {
       if (input.value.trim() === "") {
@@ -146,4 +145,4 @@ const validarcampoTabla = (campo, valor) => {
     default:
       return false;
   }
-}
+};

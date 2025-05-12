@@ -173,31 +173,33 @@ class UsuarioController {
 
     public function login($email, $password) {
 
-/*       if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
-          return ["succes"=> false, 'error' => 'El fomrato del email no es válido'];
-        }
-      if(!$this->validarPassword($data['password'])){
-          return ['succes' => false, 'error' => 'La contraseña debe tener entre 6 y 10 caracteres, incluyendo al menos una mayuscula una minuscula, un numero y uno de estos caracteres !@#*'];
-         }
- */
-        $query = "SELECT * FROM datos_usuarios WHERE email = :email AND tipo_usuario = 3 LIMIT 1";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':email', $email);
-        $stmt->execute();
-    
-        if ($stmt->rowCount() > 0) {
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (password_verify($password, $user['password'])) {
-                if (session_status() === PHP_SESSION_NONE) {
-                    session_start();
-                }
-                $_SESSION['adminLoggedIn'] = true;  
-                 $_SESSION['adminEmail'] = $email;  
-                return ['success' => true];
-            }
-        }
-    
-        return ['success' => false, 'error' => 'Credenciales incorrectas'];
+
+      if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        return ["succes"=> false, 'error' => 'El fomrato del email no es válido'];
+      }
+    if(!$this->validarPassword($password)){
+        return ['succes' => false, 'error' => 'La contraseña debe tener entre 6 y 10 caracteres, incluyendo al menos una mayuscula una minuscula, un numero y uno de estos caracteres !@#*'];
+       }
+
+      $query = "SELECT * FROM datos_usuarios WHERE email = :email AND tipo_usuario = 3 LIMIT 1";
+      $stmt = $this->db->prepare($query);
+      $stmt->bindParam(':email', $email);
+      $stmt->execute();
+  
+      if ($stmt->rowCount() > 0) {
+          $user = $stmt->fetch(PDO::FETCH_ASSOC);
+          if (password_verify($password, $user['password'])) {
+              if (session_status() === PHP_SESSION_NONE) {
+                  session_start();
+              }
+              $_SESSION['adminLoggedIn'] = true;  
+               $_SESSION['adminEmail'] = $email;  
+              return ['success' => true];
+          }
+      }
+  
+      return ['success' => false, 'error' => 'Credenciales incorrectas'];
+
     }
 }
 ?> 

@@ -1,4 +1,4 @@
--- Active: 1742225238351@@127.0.0.1@3306@usuarisrol2
+-- Active: 1742466970627@@127.0.0.1@3306@usuarisrol2
 DROP DATABASE IF EXISTS usuarisrol2;
 CREATE DATABASE  usuarisrol2 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE usuarisrol2;
@@ -20,5 +20,5 @@ INSERT INTO datos_usuarios (nombre_apellidos, usuario, email, password, tipo_usu
 VALUES ('Santiago', 'Perolillos', 'santiago@ejemplo.com', '$2y$14$T8abg7yuw4iMXyvmr9oQneX5aoxz0Oy29StkxakzH9h6.jjQXGXMS', 2, "default-user.svg");
 
 INSERT INTO datos_usuarios (nombre_apellidos, usuario, email, password, tipo_usuario, foto) 
-VALUES ('Admin', 'Hernandez', 'admin@ejemplo.com', '$2y$10$iVDiBcvRwXTcgUot/QAQ1e3KDdOQl8UUkuMkot.JSFrBtRQR4y9wm', 3, "default-user.svg");
-/* Admin! */
+VALUES ('Admin', 'Hernandez', 'admin@gmail.com', '$2y$10$rN9mGjSR93RiMRArbGlNm.EOF8bnWfLIPh2F4G5ynAFk92v7ZCSVe', 3, "default-user.svg");
+/* C@rlo89 */

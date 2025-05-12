@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $action = $_POST['action'] ?? '';       
         if ($action === 'update_foto') {//evento
           if(!isset($_SESSION["adminLoggedIn"])||$_SESSION["adminLoggedIn"]!==true){
-            echo json_decode(["error"=>"No autorizado"]);
+            echo json_encode(["error" => "No autorizado"]);
             exit;
           }
             $id = $_POST['id'] ?? '';
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else if ($action === 'create') {
           //verificar si el usuario esta logueado como admin
            if(!isset($_SESSION["adminLoggedIn"])||$_SESSION["adminLoggedIn"]!==true){
-            echo json_decode(["error"=>"No autorizado"]);
+            echo json_encode(["error"=>"No autorizado"]);
             exit;
           }
             // Procesamos la creación de usuario con foto
@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else if (isset($_POST['action']) && $_POST['action'] === 'create') {
        if(!isset($_SESSION["adminLoggedIn"])||$_SESSION["adminLoggedIn"]!==true){
-            echo json_decode(["error"=>"No autorizado"]);
+            echo json_encode(["error"=>"No autorizado"]);
             exit;
           }
         // Procesamos la creación de usuario sin foto
